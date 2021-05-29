@@ -11,7 +11,7 @@ Funcionalidade: Cadastro
         Então devo receber um token de Authenticação
 
         Example:
-            | email          | password | confirmation_password |
+            | email          | password | passwordConfirmation |
             | davi@teste.com | teste    | teste                 |
 
     Cenário: Email não informado
@@ -20,7 +20,7 @@ Funcionalidade: Cadastro
         Então devo receber um erro com a mensagem "É necessário que o campo 'email' seja preenchido"
 
         Example:
-            | email | password | confirmation_password |
+            | email | password | passwordConfirmation |
             |       | teste    | teste                 |
 
     Cenário: Senha não informada
@@ -29,7 +29,7 @@ Funcionalidade: Cadastro
         Então devo receber um erro com a mensagem "É necessário que o campo 'password' seja preenchido"
 
         Example:
-            | email          | password | confirmation_password |
+            | email          | password | passwordConfirmation |
             | davi@teste.com |          | teste                 |
 
     Cenário: Senha divergente
@@ -38,16 +38,16 @@ Funcionalidade: Cadastro
         Então devo receber um erro com a mensagem "As senhas informadas não são iguais"
 
         Example:
-            | email          | password | confirmation_password |
+            | email          | password | passwordConfirmation |
             | davi@teste.com | teste    | test2                 |
 
     Cenário: Nenhum campo preenchido
         Dado que faço uma solicitação de Cadastro
         Quando envio os campos de cadastro vazio
-        Então devo receber um erro com a mensagem "É necessário que os campos 'email', 'password', 'confirmation_password',  sejam preenchidos"
+        Então devo receber um erro com a mensagem "É necessário que os campos 'email', 'password', 'passwordConfirmation',  sejam preenchidos"
 
         Example:
-            | email | password | confirmation_password |
+            | email | password | passwordConfirmation |
             |       |          |                       |
 
     Cenário: Email já cadastrado
@@ -56,5 +56,5 @@ Funcionalidade: Cadastro
         Então devo receber um erro com a mensagem "Já existe um usuário cadastrado com o email informado"
 
         Example:
-            | email          | password | confirmation_password |
+            | email          | password | passwordConfirmation |
             | davi@teste.com | teste    | teste                 |
