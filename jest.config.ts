@@ -24,6 +24,13 @@ export default {
   // A map from regular expressions to paths to transformers
   transform: {
     '.+\\.ts$': 'ts-jest'
+  },
+
+  moduleNameMapper: {
+    '@core/(.*)': '<rootDir>/src/core/$1',
+    '@infra/(.*)': '<rootDir>/src/infra/$1',
+    '@adapter/(.*)': '<rootDir>/src/adapter/$1',
+    '@utils/(.*)': '<rootDir>/src/utils/$1'
   }
 
 }
