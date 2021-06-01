@@ -29,8 +29,6 @@ export class Pedal {
     if (!this.start_date) throw new MissingParamError('start_date')
     if (!this.start_date_registration) throw new MissingParamError('start_date_registration')
     if (!this.end_date_registration) throw new MissingParamError('end_date_registration')
-    if (!this.additional_information) throw new MissingParamError('additional_information')
     if (!this.start_place) throw new MissingParamError('start_place')
-    if (!this.participants_limit) throw new MissingParamError('participants_limit')
   }
 }
