@@ -1,4 +1,4 @@
-import { WrongEmailpasswordError } from '@core/errors/WrongEmailPasswordError'
+import { WrongEmailPasswordError } from '@core/errors/WrongEmailPasswordError'
 import { IUsersRepository } from '@core/repositories/IUsersRepository'
 import { IHashCompare } from '@infra/encripters/IHashCompare'
 import { IHashEncrypt } from '@infra/encripters/IHashEncrypt'
@@ -14,11 +14,11 @@ class AuthenticationService {
   async authenticate (email: string, password: string): Promise<string> {
     const user = await this.usersRepository.findByEmail(email)
 
-    if (!user) throw new WrongEmailpasswordError()
+    if (!user) throw new WrongEmailPasswordError()
 
     const validPassword = await this.encrypter.compare(password, user.password)
 
-    if (!validPassword) throw new WrongEmailpasswordError()
+    if (!validPassword) throw new WrongEmailPasswordError()
 
     const token = this.token.sign({
       id: user.id,

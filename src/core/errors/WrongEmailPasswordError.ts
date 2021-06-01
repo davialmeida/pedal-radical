@@ -1,8 +1,8 @@
-class WrongEmailpasswordError extends Error {
+class WrongEmailPasswordError extends Error {
   constructor () {
     super('Email ou senha incorretos')
-    this.name = 'WrongEmailpasswordError'
+    this.name = 'WrongEmailPasswordError'
   }
 }
 
-export { WrongEmailpasswordError }
+export { WrongEmailPasswordError }
