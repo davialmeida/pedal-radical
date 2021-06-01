@@ -1,9 +1,11 @@
 import { Pedal } from '@core/entities/Pedal'
+import { PedalRepositoryMemory } from '@infra/repository/PedalRepositoryMemory'
+import { CreatePedalService } from './CreatePedal'
 
 describe('Create Pedal', () => {
-  test('Should pedal must be created', () => {
-    // const pedalRepository = new PedalRepositoryMemory()
-    // const sut = new CreatePedalService(pedalRepository)
+  test('Should pedal must be created', async () => {
+    const pedalRepository = new PedalRepositoryMemory()
+    const sut = new CreatePedalService(pedalRepository)
 
     const params = {
       name: '50KM do Lucas',
@@ -17,6 +19,8 @@ describe('Create Pedal', () => {
 
     const pedal = new Pedal(params)
 
-    expect(pedal).toBeInstanceOf(Pedal)
+    const response = await sut.execute(pedal)
+
+    expect(response).toBeInstanceOf(Pedal)
   })
 })
