@@ -49,6 +49,21 @@ describe('Authenticate User', () => {
       expect(err).toEqual(new WrongEmailPasswordError())
     }
   })
+
+  test('Should user not be authenticated if email is incorret', async () => {
+    const userRepository = new UserRepositoryMemory()
+    const encripter = new BCryptEncrypt()
+    const tokenJWT = new JWTToken()
+
+    const sut = new AuthenticationService(userRepository, encripter, tokenJWT)
+
+    try {
+      await sut.authenticate('davistrife@live.com', 'teste1235')
+    } catch (err) {
+      expect(err).toEqual(new WrongEmailPasswordError())
+    }
+  })
+
   /* test('Should no register a user if email not provided', async () => {
     const userRepository = new UserRepositoryMemory()
     const encripter = new BCryptEncrypt()
