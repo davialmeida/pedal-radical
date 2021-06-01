@@ -1,3 +1,4 @@
+import { MissingParamError } from '@core/errors/MissingParam'
 import { uuid } from 'uuidv4'
 
 export class User {
@@ -15,5 +16,9 @@ export class User {
     if (!id) {
       this.id = uuid()
     }
+
+    if (!this.name) throw new MissingParamError('name')
+    if (!this.email) throw new MissingParamError('email')
+    if (!this.password) throw new MissingParamError('password')
   }
 }

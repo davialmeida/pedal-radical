@@ -8,11 +8,11 @@
         "strict": true,
         "baseUrl": ".",
         "paths": {
-        "@controllers/*": ["./src/controllers/*"],
-        "@core/*": ["./src/core/*"],
-        "@infra/*": ["./src/infra/*"],
-        "@adapter/*": ["./src/adapter/*"],
-        "@utils/*": ["./src/utils/*"]
+          "@controllers/*": ["./src/controllers/*"],
+          "@core/*": ["./src/core/*"],
+          "@infra/*": ["./src/infra/*"],
+          "@adapter/*": ["./src/adapter/*"],
+          "@utils/*": ["./src/utils/*"]
         }
     },
 }

@@ -32,6 +32,15 @@ Funcionalidade: Cadastro
             | email          | password | passwordConfirmation |
             | davi@teste.com |          | teste                 |
 
+    Cenário: Confirmação de senha não informada
+            Dado que faço uma solicitação de Cadastro
+            Quando envio os parametros de cadastros sem a confirmação de senha
+            Então devo receber um erro com a mensagem "É necessário que o campo 'passwordConfirmation' seja preenchido"
+
+            Example:
+                | email          | password | passwordConfirmation |
+                | davi@teste.com | teste    |                       |
+
     Cenário: Senha divergente
         Dado que faço uma solicitação de Cadastro
         Quando envio os dados de cadastro e as senha não são iguais
@@ -41,14 +50,6 @@ Funcionalidade: Cadastro
             | email          | password | passwordConfirmation |
             | davi@teste.com | teste    | test2                 |
 
-    Cenário: Nenhum campo preenchido
-        Dado que faço uma solicitação de Cadastro
-        Quando envio os campos de cadastro vazio
-        Então devo receber um erro com a mensagem "É necessário que os campos 'email', 'password', 'passwordConfirmation',  sejam preenchidos"
-
-        Example:
-            | email | password | passwordConfirmation |
-            |       |          |                       |
 
     Cenário: Email já cadastrado
         Dado que faço uma solicitação de Cadastro
