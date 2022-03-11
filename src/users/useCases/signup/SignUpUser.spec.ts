@@ -5,7 +5,7 @@ import { IUsersRepository } from '@core/repositories/IUsersRepository'
 import { BCryptEncrypt } from '@infra/encripters/bcrypt/BCryptEncrypt'
 import { UserRepositoryMemory } from '@infra/repository/UserRepositoryMemory'
 import { JWTToken } from '@infra/tokens/jsonwebtoken/JWTToken'
-import { AuthenticationService } from '../authentication/Authentication'
+import { AuthenticationService } from '../../../../old/src/core/services/authentication/Authentication'
 import SignUpUserService from './SignUpUser'
 
 const buildMakeAuthentication = (userRepository: IUsersRepository | null = null): any => {
