@@ -1,10 +1,10 @@
-import { DivergenceError } from '@core/errors/DivergenceError'
-import { MissingParamError } from '@core/errors/MissingParam'
-import { UserAlreadyExistsError } from '@core/errors/UserAlreadyExistsError'
 import { IUsersRepository } from '@core/repositories/IUsersRepository'
 import { BCryptEncrypt } from '@infra/encripters/bcrypt/BCryptEncrypt'
 import { UserRepositoryMemory } from '@infra/repository/UserRepositoryMemory'
 import { JWTToken } from '@infra/tokens/jsonwebtoken/JWTToken'
+import { DivergenceError } from 'src/shared/errors/divergence-error'
+import { MissingParamError } from 'src/shared/errors/missing-param'
+import { UserAlreadyExistsError } from 'src/users/errors/user-already-exists.error'
 import { AuthenticationService } from '../../../../old/src/core/services/authentication/Authentication'
 import SignUpUserService from './SignUpUser'
 
