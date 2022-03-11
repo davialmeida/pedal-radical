@@ -3,7 +3,7 @@ import { BCryptEncrypt } from '@infra/encripters/bcrypt/BCryptEncrypt'
 import { UserRepositoryMemory } from '@infra/repository/UserRepositoryMemory'
 import { JWTToken } from '@infra/tokens/jsonwebtoken/JWTToken'
 import SignUpUserService from '../signup/SignUpUser'
-import { AuthenticationService } from './Authentication'
+import { AuthenticationService } from './authentication'
 
 describe('Authenticate User', () => {
   test('Should user must be authenticated', async () => {
