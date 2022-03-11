@@ -1,7 +1,7 @@
-import { User } from '@core/entities/User'
-import { IUsersRepository } from '@core/repositories/IUsersRepository'
+import { User } from "src/users/entities/user.entity"
+import { IUsersRepository } from "src/users/repositories/iusers.repository"
 
-class UserRepositoryMemory implements IUsersRepository {
+class UserMemoryRepository implements IUsersRepository {
   private readonly users: User[] = [{
     id: 'hash',
     email: 'davi@teste2.com',
@@ -20,4 +20,4 @@ class UserRepositoryMemory implements IUsersRepository {
   }
 }
 
-export { UserRepositoryMemory }
+export { UserMemoryRepository as UserRepositoryMemory }
