@@ -1,18 +1,21 @@
 {
-    "compilerOptions": {
-        "outDir": "./dist",
-        "module": "CommonJS",
-        "target": "ES2019",
-        "esModuleInterop": true,
-        "allowJs": true,
-        "strict": true,
-        "baseUrl": ".",
-        "paths": {
-          "@controllers/*": ["./src/controllers/*"],
-          "@core/*": ["./src/core/*"],
-          "@infra/*": ["./src/infra/*"],
-          "@adapter/*": ["./src/adapter/*"],
-          "@utils/*": ["./src/utils/*"]
-        }
-    },
+  "compilerOptions": {
+    "module": "commonjs",
+    "declaration": true,
+    "removeComments": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "allowSyntheticDefaultImports": true,
+    "target": "es2017",
+    "sourceMap": true,
+    "outDir": "./dist",
+    "baseUrl": "./",
+    "incremental": true,
+    "skipLibCheck": true,
+    "strictNullChecks": false,
+    "noImplicitAny": false,
+    "strictBindCallApply": false,
+    "forceConsistentCasingInFileNames": false,
+    "noFallthroughCasesInSwitch": false
+  }
 }
