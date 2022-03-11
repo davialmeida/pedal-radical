@@ -6,7 +6,7 @@ import { DivergenceError } from 'src/shared/errors/divergence-error'
 import { MissingParamError } from 'src/shared/errors/missing-param'
 import { UserAlreadyExistsError } from 'src/users/errors/user-already-exists.error'
 import { AuthenticationService } from '../../../../old/src/core/services/authentication/Authentication'
-import SignUpUserService from './SignUpUser'
+import SignUpUserService from './signup-user'
 
 const buildMakeAuthentication = (userRepository: IUsersRepository | null = null): any => {
   if (!userRepository) userRepository = new UserRepositoryMemory()
