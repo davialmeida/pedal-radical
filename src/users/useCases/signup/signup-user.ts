@@ -1,9 +1,9 @@
-import { User } from '@core/entities/User'
-import { MissingParamError } from '@core/errors/MissingParam'
-import { DivergenceError } from '@core/errors/DivergenceError'
-import { IUsersRepository } from '@core/repositories/IUsersRepository'
-import { UserAlreadyExistsError } from '@core/errors/UserAlreadyExistsError'
-import { IHashEncrypt } from '@infra/encripters/IHashEncrypt'
+import { DivergenceError } from "src/shared/errors/divergence-error"
+import { MissingParamError } from "src/shared/errors/missing-param"
+import { IHashEncrypt } from "src/shared/infra/encripters/ihash-encrypt"
+import { User } from "src/users/entities/user.entity"
+import { UserAlreadyExistsError } from "src/users/errors/user-already-exists.error"
+import { IUsersRepository } from "src/users/repositories/iusers.repository"
 
 export default class SignUpUserService {
   constructor (

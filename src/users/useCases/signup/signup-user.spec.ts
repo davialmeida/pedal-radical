@@ -1,29 +1,29 @@
-import { IUsersRepository } from '@core/repositories/IUsersRepository'
-import { BCryptEncrypt } from '@infra/encripters/bcrypt/BCryptEncrypt'
-import { UserRepositoryMemory } from '@infra/repository/UserRepositoryMemory'
-import { JWTToken } from '@infra/tokens/jsonwebtoken/JWTToken'
 import { DivergenceError } from 'src/shared/errors/divergence-error'
 import { MissingParamError } from 'src/shared/errors/missing-param'
+import { BCryptEncrypt } from 'src/shared/infra/encripters/bcrypt/bcrypt-encrypt'
+import { JWTToken } from 'src/shared/infra/tokens/jsonwebtoken/JWTToken'
 import { UserAlreadyExistsError } from 'src/users/errors/user-already-exists.error'
+import { UserMemoryRepository } from 'src/users/infra/memory/repositories/user-memory.repository'
+import { IUsersRepository } from 'src/users/repositories/iusers.repository'
 import { AuthenticationService } from '../authentication/authentication'
 import SignUpUserService from './signup-user'
 
 const buildMakeAuthentication = (userRepository: IUsersRepository | null = null): any => {
-  if (!userRepository) userRepository = new UserRepositoryMemory()
+  if (!userRepository) userRepository = new UserMemoryRepository()
   const bcryptEncrypter = new BCryptEncrypt()
   const token = new JWTToken()
 
   return new AuthenticationService(userRepository, bcryptEncrypter, token)
 }
 const buildMakeSignUpUser = (userRepository: IUsersRepository | null = null): any => {
-  if (!userRepository) userRepository = new UserRepositoryMemory()
+  if (!userRepository) userRepository = new UserMemoryRepository()
   const bcryptEncrypter = new BCryptEncrypt()
 
   return new SignUpUserService(userRepository, bcryptEncrypter)
 }
 describe('SignUp User', () => {
   test('Should register a user', async () => {
-    const userRepository = new UserRepositoryMemory()
+    const userRepository = new UserMemoryRepository()
     const sut = buildMakeSignUpUser(userRepository)
     const sutAuthenticationService = buildMakeAuthentication(userRepository)
     const params = {

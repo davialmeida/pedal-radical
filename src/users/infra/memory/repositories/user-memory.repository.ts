@@ -20,4 +20,4 @@ class UserMemoryRepository implements IUsersRepository {
   }
 }
 
-export { UserMemoryRepository as UserRepositoryMemory }
+export { UserMemoryRepository }
