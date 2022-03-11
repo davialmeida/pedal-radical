@@ -1,6 +1,6 @@
-import { IHashEncrypt } from '../IHashEncrypt'
+import { IHashEncrypt } from '../ihash-encrypt'
 import bcrypt from 'bcrypt'
-import { IHashCompare } from '../IHashCompare'
+import { IHashCompare } from '../ihash-compare'
 
 class BCryptEncrypt implements IHashEncrypt, IHashCompare {
   async encrypt (input: string): Promise<string> {
