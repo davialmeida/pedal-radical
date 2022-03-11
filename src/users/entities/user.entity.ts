@@ -1,4 +1,4 @@
-import { MissingParamError } from '@core/errors/MissingParam'
+import { MissingParamError } from 'src/shared/errors/missing-param'
 import { uuid } from 'uuidv4'
 
 export class User {
